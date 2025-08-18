@@ -1,0 +1,142 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+}
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    background-color: #fbf2f2;
+    border-radius: 10px;
+    &__img {
+        width: 10rem;
+        height: 10rem;
+        aspect-ratio: 1 / 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 16px; // rounded-full
+    }
+
+    &__detail {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        &__hostName {
+            color: #994d51;
+        }
+    }
+    transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transform: translateY(-3px);
+    }
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.moreInfoButton {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3e7e8;
+    padding: 0.5rem;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        background-color: #f3cacd;
+    }
+}
+
+.searchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchInput {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    min-width: 500px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 0.9rem;
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchInputWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 1000px; // 더 넓게
+    min-width: 0;
+    border-radius: 20px;
+    border: none;
+}
+
+.filterButton {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    border: none;
+    border-radius: 16px;
+    padding: 0.7rem 1rem;
+    font-size: 0.7rem;
+    color: white;
+    background-color: #ea2a33;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    align-self: center;
+    &:hover {
+        background-color: #cd141d;
+    }
+}

@@ -1,0 +1,120 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+.titleSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+}
+
+.subTitle {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.name {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__cardRail {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        border: 1.5px solid;
+        border-color: #e7d0d1;
+        background-color: white;
+        border-radius: 16px;
+        padding: 1.5rem 1rem;
+
+        &__rating {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        &__number {
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        &__title {
+        }
+    }
+}
+
+.activityLog {
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+
+    &__rail {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-left: 2px solid;
+        border-color: #e7d0d1;
+        gap: 2rem;
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    &__card {
+        &__title {
+            font-weight: 600;
+        }
+
+        &__date {
+            color: #994d51;
+        }
+    }
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

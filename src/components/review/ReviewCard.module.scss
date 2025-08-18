@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1.5px solid;
+    border-color: #e7d0d1;
+    border-radius: 16px;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem; // gap-6
+    margin-bottom: 0.5rem;
+
+    &__avatar {
+        width: 3rem; // size-12
+        height: 3rem; // size-12
+        aspect-ratio: 1 / 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 9999px; // rounded-full
+    }
+}
