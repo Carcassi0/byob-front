@@ -1,5 +1,4 @@
 import style from './styles/Wishlist.module.scss';
-import WineCard from '../components/winecard/WineCard';
 import React, { useRef } from 'react';
 
 function Wishlist() {
@@ -51,16 +50,7 @@ function Wishlist() {
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
-                        onMouseMove={handleMouseMove}>
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                        <WineCard />
-                    </div>
+                        onMouseMove={handleMouseMove}></div>
                 </div>
             </div>
         </div>

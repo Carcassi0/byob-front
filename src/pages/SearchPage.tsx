@@ -1,8 +1,8 @@
 import style from './styles/SearchPage.module.scss';
 import img from '../assets/alotofwine.jpeg';
 import { CalendarRange, MapPin, Search } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash';
+import { useEffect, useRef, useState } from 'react';
+// import { debounce } from 'lodash';
 
 interface mockGatheringType {
     image: string;
@@ -14,7 +14,7 @@ interface mockGatheringType {
 }
 function SearchPage() {
     const inputRef = useRef<HTMLInputElement>(null);
-    const [isSearching, setIsSearching] = useState(false);
+    // const [isSearching, setIsSearching] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredGatherings, setFilteredGatherings] = useState<mockGatheringType[]>([]);
     const mockGatherings: mockGatheringType[] = [

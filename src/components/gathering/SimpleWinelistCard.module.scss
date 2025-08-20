@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 10px;
+}
+
+.titleSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wineInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.nameAndVintage {
+}
+
+.producer {
+    color: #994d51;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.avatar {
+    width: 1.7rem; // size-12
+    height: 1.7rem; // size-12
+    aspect-ratio: 1 / 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 9999px; // rounded-full
+}
