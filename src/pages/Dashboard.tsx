@@ -1,4 +1,4 @@
-import UpcomingGatheringCard from '../components/gathering/UpcomingGatheringCard';
+import UpcomingGatheringCard from '../features/gathering/UpcomingGatheringCard';
 import style from './styles/Dashboard.module.scss';
 
 function Dashboard() {

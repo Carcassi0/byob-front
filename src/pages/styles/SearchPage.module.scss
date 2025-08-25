@@ -14,8 +14,8 @@
     margin-bottom: 1rem;
 }
 .cardGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -23,28 +23,35 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 1rem;
+    padding-right: 1rem;
     align-items: center;
-    background-color: #fbf2f2;
+    // background-color: #fbf2f2;
+    background-color: white;
     border-radius: 10px;
     &__img {
-        width: 10rem;
-        height: 10rem;
+        width: 16rem;
+        height: 16rem;
         aspect-ratio: 1 / 1;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 16px; // rounded-full
+        border-radius: 10px 0px 0px 10px;
     }
 
     &__detail {
         display: flex;
         flex-direction: column;
+        width: 100%;
         gap: 0.5rem;
         padding: 0.5rem;
 
         &__hostName {
             color: #994d51;
+        }
+
+        &__availability {
+            color: #994d51;
+            font-weight: 700;
         }
     }
     transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,6 +77,8 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
 }
 
 .moreInfoButton {
@@ -86,6 +95,24 @@
 
     &:hover {
         background-color: #f3cacd;
+    }
+}
+
+.joinButton {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #ea2a33;
+    padding: 0.7rem 1rem;
+    margin: 0;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    &:hover {
+        background-color: #cd141d;
+        transform: translateY(-1px);
     }
 }
 
@@ -136,7 +163,32 @@
     outline: none;
     white-space: nowrap;
     align-self: center;
+    transition: all 0.2s ease;
     &:hover {
         background-color: #cd141d;
+        transform: translateY(-1px);
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.depositSection {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+
+    &__number {
+        font-weight: 600;
+        font-size: x-large;
+    }
+
+    &__text {
+        color: grey;
+        font-size: x-large;
     }
 }

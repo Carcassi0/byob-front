@@ -11,6 +11,10 @@ interface mockGatheringType {
     shortDescription: string;
     time: string;
     location: string;
+    deposit: number;
+    total: number;
+    remain: number;
+    availability: boolean;
 }
 function SearchPage() {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -25,6 +29,10 @@ function SearchPage() {
             shortDescription: '소믈리에와 함께하는 프리미엄 와인 테이스팅 모임.',
             time: '2025.08.30',
             location: 'Shirokanedai',
+            deposit: 100000,
+            total: 12,
+            remain: 3,
+            availability: true,
         },
         {
             image: img,
@@ -33,6 +41,10 @@ function SearchPage() {
             shortDescription: '초보자를 위한 와인 입문 클래스와 네트워킹.',
             time: '2025.09.05',
             location: 'Gangnam',
+            deposit: 100000,
+            total: 15,
+            remain: 0,
+            availability: false,
         },
         {
             image: img,
@@ -41,6 +53,10 @@ function SearchPage() {
             shortDescription: '프랑스 보르도 와인 집중 시음 및 해설.',
             time: '2025.09.12',
             location: 'Itaewon',
+            deposit: 100000,
+            total: 10,
+            remain: 2,
+            availability: true,
         },
         {
             image: img,
@@ -49,6 +65,10 @@ function SearchPage() {
             shortDescription: '이탈리아 와인과 치즈 페어링 전문가 특강.',
             time: '2025.09.20',
             location: 'Hongdae',
+            deposit: 100000,
+            total: 8,
+            remain: 1,
+            availability: true,
         },
         {
             image: img,
@@ -57,6 +77,10 @@ function SearchPage() {
             shortDescription: '와인과 함께하는 비즈니스 네트워킹 파티.',
             time: '2025.09.28',
             location: 'Yeouido',
+            deposit: 100000,
+            total: 20,
+            remain: 0,
+            availability: false,
         },
         {
             image: img,
@@ -65,6 +89,10 @@ function SearchPage() {
             shortDescription: '스페인 와인과 타파스 페어링 체험 모임.',
             time: '2025.10.03',
             location: 'Seongsu',
+            deposit: 100000,
+            total: 10,
+            remain: 5,
+            availability: true,
         },
         {
             image: img,
@@ -73,6 +101,10 @@ function SearchPage() {
             shortDescription: '내추럴 와인 트렌드와 시음회, 전문가 설명.',
             time: '2025.10.10',
             location: 'Apgujeong',
+            deposit: 100000,
+            total: 14,
+            remain: 4,
+            availability: true,
         },
         {
             image: img,
@@ -81,6 +113,10 @@ function SearchPage() {
             shortDescription: '와인 블라인드 테이스팅 챌린지, 상품 증정.',
             time: '2025.10.17',
             location: 'Mapo',
+            deposit: 100000,
+            total: 16,
+            remain: 0,
+            availability: false,
         },
         {
             image: img,
@@ -89,6 +125,10 @@ function SearchPage() {
             shortDescription: '와인과 클래식 음악의 만남, 감성 모임.',
             time: '2025.10.24',
             location: 'Bukchon',
+            deposit: 100000,
+            total: 9,
+            remain: 2,
+            availability: true,
         },
         {
             image: img,
@@ -97,6 +137,10 @@ function SearchPage() {
             shortDescription: '고급 와인과 한식 페어링, 셰프와 함께.',
             time: '2025.10.31',
             location: 'Jamsil',
+            deposit: 100000,
+            total: 12,
+            remain: 0,
+            availability: false,
         },
     ];
 
@@ -161,7 +205,13 @@ function SearchPage() {
                     style={{ backgroundImage: `url(${info.image})` }}
                 />
                 <div className={style.card__detail}>
-                    <p className={style.card__detail__hostName}>Hosted by {info.hostName}</p>
+                    <div className={style.section}>
+                        <p className={style.card__detail__hostName}>Hosted by {info.hostName}</p>
+                        <p className={style.card__detail__availability}>
+                            {info.remain}/{info.total}
+                        </p>
+                    </div>
+
                     <h2 className={style.card__detail__title}>{info.title}</h2>
                     <p className={style.card__detail__shortDescription}>{info.shortDescription}</p>
                     <div className={style.infoSection}>
@@ -173,6 +223,15 @@ function SearchPage() {
                             <MapPin size={17} />
                             {info.location}
                         </p>
+                    </div>
+                    <div className={style.section}>
+                        <div className={style.depositSection}>
+                            <p className={style.depositSection__number}>
+                                {info.deposit.toLocaleString()}원
+                            </p>
+                            <p className={style.depositSection__text}>| 보증금</p>
+                        </div>
+                        <button className={style.joinButton}>참여하기</button>
                     </div>
                 </div>
             </div>
@@ -208,6 +267,10 @@ function SearchPage() {
                         shortDescription={item.shortDescription}
                         time={item.time}
                         location={item.location}
+                        deposit={item.deposit}
+                        total={item.total}
+                        remain={item.remain}
+                        availability={item.availability}
                     />
                 ))}
             </div>

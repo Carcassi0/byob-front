@@ -1,7 +1,7 @@
 import style from './styles/MyPage.module.scss';
 import { Star } from 'lucide-react';
 
-import ReviewCard from '../components/review/ReviewCard';
+import ReviewCard from '../features/review/ReviewCard';
 
 function MyPage() {
     return (
@@ -36,6 +36,14 @@ function MyPage() {
                         <p className={style.summary__card__number}>12</p>
                         <p className={style.summary__card__title}>참석한 와인회</p>
                     </div>
+                    {/* <div className={style.summary__card}>
+                        <p className={style.summary__card__number}>12</p>
+                        <p className={style.summary__card__title}>팔로워</p>
+                    </div>
+                    <div className={style.summary__card}>
+                        <p className={style.summary__card__number}>12</p>
+                        <p className={style.summary__card__title}>팔로잉</p>
+                    </div> */}
                 </div>
             </div>
             <div className={style.activityLog}>

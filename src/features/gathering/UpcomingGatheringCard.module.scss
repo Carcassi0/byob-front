@@ -1,0 +1,181 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    gap: 2rem;
+}
+
+.extended {
+    gap: 0rem;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.extendContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 9999px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+
+.titleSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+}
+
+.subTitle {
+    color: #994d51;
+}
+
+.viewDetailButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 70px;
+    background: none;
+    border: none;
+    border-radius: 12px;
+    padding: 0.7rem 1rem;
+    font-size: 0.7rem;
+    color: white;
+    background-color: #ea2a33;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    align-self: center;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    &:hover {
+        background-color: #c0262d;
+        transform: translateY(-1px);
+    }
+}
+
+.winelistContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow-y: scroll;
+}
+
+.depositContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.depositSection {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+
+    &__number {
+        font-weight: 600;
+        font-size: x-large;
+    }
+
+    &__text {
+        color: grey;
+        font-size: x-large;
+    }
+}
+
+// .textButton {
+//     border: none;
+//     background-color: transparent;
+//     color: blue;
+//     cursor: pointer;
+//     padding: 0;
+//     font-size: 0.9rem;
+//     text-decoration: underline;
+//     transition: color 0.2s;
+
+//     &:hover {
+//         color: #c0262d;
+//         text-decoration: none;
+//     }
+// }
+.textButton {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+        color: #c0262d;
+        background-color: rgba(192, 38, 45, 0.08);
+        text-decoration: none;
+    }
+
+    /* active (클릭 중) */
+    &:active {
+        transform: scale(0.97);
+    }
+}
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.cancelButton,
+.askButton {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.cancelButton {
+    color: white;
+    background-color: #ea2a33;
+    border: none;
+}
+.cancelButton:hover {
+    background-color: #c0262d;
+    transform: translateY(-1px);
+}
+
+.askButton {
+    color: #111;
+    background-color: white;
+    border: 2px solid #c0262d;
+}
+.askButton:hover {
+    background-color: #c0262d;
+    color: white;
+    transform: translateY(-1px);
+}

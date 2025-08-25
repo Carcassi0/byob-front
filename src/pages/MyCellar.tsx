@@ -2,7 +2,7 @@ import { Search } from 'lucide-react';
 import style from './styles/MyCellar.module.scss';
 import { useRef, useState } from 'react';
 import type { wineinfo } from '../types/wineinfo';
-import WineCard from '../components/winecard/WineCard';
+import WineCard from '../features/winecard/WineCard';
 
 function MyCellar() {
     const inputRef = useRef<HTMLInputElement>(null);
