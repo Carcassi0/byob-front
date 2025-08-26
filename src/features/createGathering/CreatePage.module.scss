@@ -1,0 +1,179 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcf8f8;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    padding: 2.5rem;
+    border: none;
+}
+.title {
+    padding-left: 0.3rem;
+    padding-bottom: 1rem;
+    font-size: 1.8rem;
+}
+.contents {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+    gap: 1rem;
+}
+
+.progressContainer {
+    display: flex;
+    flex-direction: column;
+}
+.progressText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+// .progressBar {
+//     height: 10px;
+//     border-radius: 5px;
+//     background-color: #eee;
+//     overflow: hidden;
+//     margin-top: 0.5rem;
+//     margin-bottom: 1rem;
+//     width: 100%;
+// }
+
+.progressBar {
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.progressBar__step1 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 14.28%, #eee 14.28%);
+}
+
+.progressBar__step2 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 28.56%, #eee 28.56%);
+}
+
+.progressBar__step3 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 42.84%, #eee 42.84%);
+}
+
+.progressBar__step4 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 57.12%, #eee 57.12%);
+}
+
+.progressBar__step5 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 71.4%, #eee 71.4%);
+}
+
+.progressBar__step6 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 85.68%, #eee 85.68%);
+}
+
+.progressBar__step7 {
+    @extend .progressBar;
+    background: linear-gradient(to right, #ea2a33 100%, #eee 100%);
+}
+
+// form
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+
+    &__row {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+.formButtonRail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.formButton {
+    height: 40px;
+    width: 60px;
+    border-radius: 16px;
+    border: none;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid grey;
+    border-radius: 8px;
+}
+
+.formInput__detail {
+    @extend .formInput;
+    height: 80px;
+}
+
+.formInput__image {
+    @extend .formInput;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1.5px dotted grey;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.searchLocation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+}
+.buttonRail {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+.nextButton {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    height: 40px;
+    width: 80px;
+    border-radius: 16px;
+    border: none;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: center;
+}

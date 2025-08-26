@@ -7,6 +7,13 @@ import MyGatherings from './pages/MyGatherings';
 import MyPage from './pages/MyPage';
 import MyCellar from './pages/MyCellar';
 import Wishlist from './pages/Wishlist';
+import CreatePage1 from './features/createGathering/CreatePage1';
+import CreatePage2 from './features/createGathering/CreatePage2';
+import CreatePage3 from './features/createGathering/CreatePage3';
+import CreatePage4 from './features/createGathering/CreatePage4';
+import CreatePage5 from './features/createGathering/CreatePage5';
+import CreatePage6 from './features/createGathering/CreatePage6';
+import CreatePage7 from './features/createGathering/CreatePage7';
 
 function App() {
     return (
@@ -20,6 +27,15 @@ function App() {
                     <Route path="mypage" element={<MyPage />} />
                     <Route path="mycellar" element={<MyCellar />} />
                     <Route path="wishlist" element={<Wishlist />} />
+                </Route>
+                <Route path="/create">
+                    <Route path="1" element={<CreatePage1 />}></Route>
+                    <Route path="2" element={<CreatePage2 />}></Route>
+                    <Route path="3" element={<CreatePage3 />}></Route>
+                    <Route path="4" element={<CreatePage4 />}></Route>
+                    <Route path="5" element={<CreatePage5 />}></Route>
+                    <Route path="6" element={<CreatePage6 />}></Route>
+                    <Route path="7" element={<CreatePage7 />}></Route>
                 </Route>
             </Routes>
         </BrowserRouter>
