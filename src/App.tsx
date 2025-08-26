@@ -14,6 +14,7 @@ import CreatePage4 from './features/createGathering/CreatePage4';
 import CreatePage5 from './features/createGathering/CreatePage5';
 import CreatePage6 from './features/createGathering/CreatePage6';
 import CreatePage7 from './features/createGathering/CreatePage7';
+import CreatePageIntro from './features/createGathering/CreatePageIntro';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     <Route path="wishlist" element={<Wishlist />} />
                 </Route>
                 <Route path="/create">
+                    <Route path="intro" element={<CreatePageIntro />}></Route>
                     <Route path="1" element={<CreatePage1 />}></Route>
                     <Route path="2" element={<CreatePage2 />}></Route>
                     <Route path="3" element={<CreatePage3 />}></Route>

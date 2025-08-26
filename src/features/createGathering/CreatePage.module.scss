@@ -11,6 +11,12 @@
     background-color: #fcf8f8;
     z-index: 999;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.fadein {
+        opacity: 1;
+    }
 }
 
 .container {

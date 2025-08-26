@@ -1,8 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
+import { useEffect, useRef } from 'react';
 
 function CreatePage6() {
     const navigate = useNavigate();
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = wrapperRef.current;
+        if (el) {
+            setTimeout(() => el.classList.add(style.fadein), 10);
+        }
+    }, []);
 
     const handleNextStep = () => {
         navigate('/create/7');
@@ -11,7 +20,7 @@ function CreatePage6() {
         navigate('/create/5');
     };
     return (
-        <div className={style.wrapper}>
+        <div ref={wrapperRef} className={style.wrapper}>
             <div className={style.container}>
                 <h1 className={style.title}>모임을 소개해주세요</h1>
                 <div className={style.contents}>

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
+import { useEffect, useRef } from 'react';
 
 interface attendButton {
     label: string;
@@ -7,6 +8,14 @@ interface attendButton {
 }
 function CreatePage2() {
     const navigate = useNavigate();
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = wrapperRef.current;
+        if (el) {
+            setTimeout(() => el.classList.add(style.fadein), 10);
+        }
+    }, []);
 
     const buttonList: attendButton[] = [
         { label: '2명', data: 2 },
@@ -24,7 +33,7 @@ function CreatePage2() {
     };
 
     return (
-        <div className={style.wrapper}>
+        <div ref={wrapperRef} className={style.wrapper}>
             <div className={style.container}>
                 <h1 className={style.title}>모임 규모를 정해주세요</h1>
                 <div className={style.contents}>

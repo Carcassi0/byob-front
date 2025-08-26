@@ -1,14 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
+import { useEffect, useRef } from 'react';
 
 function CreatePage1() {
     const navigate = useNavigate();
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = wrapperRef.current;
+        if (el) {
+            // 다음 tick에 fadein 클래스 추가
+            setTimeout(() => el.classList.add(style.fadein), 10);
+        }
+    }, []);
 
     const handleNextStep = () => {
         navigate('/create/2');
     };
     return (
-        <div className={style.wrapper}>
+        <div ref={wrapperRef} className={style.wrapper}>
             <div className={style.container}>
                 <h1 className={style.title}>이 모임을 뭐라고 부를까요?</h1>
                 <div className={style.contents}>

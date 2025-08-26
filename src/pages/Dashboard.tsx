@@ -6,7 +6,7 @@ function Dashboard() {
     const navigate = useNavigate();
 
     const navigateToCreatePage = () => {
-        navigate('/create/1');
+        navigate('/create/intro');
     };
     return (
         <div className={style.pageWrapper}>
