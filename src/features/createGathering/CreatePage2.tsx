@@ -25,6 +25,10 @@ function CreatePage2() {
         { label: '6명', data: 6 },
     ];
 
+    const handleCancel = () => {
+        navigate('/main/dashboard');
+    };
+
     const handleNextStep = () => {
         navigate('/create/3');
     };
@@ -86,13 +90,18 @@ function CreatePage2() {
                             <input className={style.formInput}></input>
                         </form>
                     </div> */}
-                    <div className={style.buttonRail}>
-                        <button className={style.nextButton} onClick={handlePrevStep}>
-                            이전 단계
+                    <div className={style.pagingButtons}>
+                        <button className={style.cancelButton} onClick={handleCancel}>
+                            취소
                         </button>
-                        <button className={style.nextButton} onClick={handleNextStep}>
-                            다음 단계
-                        </button>
+                        <div className={style.buttonRail}>
+                            <button className={style.nextButton} onClick={handlePrevStep}>
+                                이전
+                            </button>
+                            <button className={style.nextButton} onClick={handleNextStep}>
+                                다음
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

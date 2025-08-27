@@ -19,10 +19,13 @@ function CreatePage5() {
     const handlePrevStep = () => {
         navigate('/create/4');
     };
+    const handleCancel = () => {
+        navigate('/main/dashboard');
+    };
     return (
         <div ref={wrapperRef} className={style.wrapper}>
             <div className={style.container}>
-                <h1 className={style.title}>언제 만날까요?</h1>
+                <h1 className={style.title}>모임을 소개해주세요</h1>
                 <div className={style.contents}>
                     <div className={style.progressContainer}>
                         <div className={style.progressText}>
@@ -40,13 +43,18 @@ function CreatePage5() {
                             />
                         </form>
                     </div>
-                    <div className={style.buttonRail}>
-                        <button className={style.nextButton} onClick={handlePrevStep}>
-                            이전 단계
+                    <div className={style.pagingButtons}>
+                        <button className={style.cancelButton} onClick={handleCancel}>
+                            취소
                         </button>
-                        <button className={style.nextButton} onClick={handleNextStep}>
-                            다음 단계
-                        </button>
+                        <div className={style.buttonRail}>
+                            <button className={style.nextButton} onClick={handlePrevStep}>
+                                이전
+                            </button>
+                            <button className={style.nextButton} onClick={handleNextStep}>
+                                다음
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

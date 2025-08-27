@@ -138,8 +138,16 @@
     flex-direction: row;
     width: 100%;
     height: 40px;
-    border: 1.5px solid grey;
+    border: 3px solid #eee;
     border-radius: 8px;
+    padding: 10px;
+
+    transition: all 0.9s ease;
+
+    &:focus {
+        outline: none;
+        border-color: #ea2a33;
+    }
 }
 
 .formInput__detail {
@@ -155,7 +163,23 @@
     background-color: white;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 250px;
+
+    &.dragging {
+        border-color: #4a90e2; // 파란색 강조
+        background-color: rgba(74, 144, 226, 0.05);
+    }
+    &.error {
+        border-color: #e74c3c;
+        color: #e74c3c;
+
+        // 에러 텍스트를 보여주고 싶을 경우
+        &::after {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    }
 }
 
 .searchLocation {
@@ -171,6 +195,42 @@
     gap: 1rem;
     justify-content: flex-end;
 }
+
+.pagingButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cancelButton {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    height: 40px;
+    width: 35px;
+    border-radius: 16px;
+    border: none;
+    align-items: center;
+    background: transparent;
+    color: #2563eb;
+    cursor: pointer;
+    padding: 4px 0px;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+        color: #c0262d;
+        text-decoration: none;
+    }
+
+    justify-content: center;
+}
+
 .nextButton {
     display: flex;
     flex-direction: row;
@@ -180,6 +240,10 @@
     border-radius: 16px;
     border: none;
     align-items: center;
-    align-self: flex-end;
+
     justify-content: center;
+}
+
+.hiddenInput {
+    display: none;
 }

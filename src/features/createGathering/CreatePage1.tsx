@@ -17,6 +17,10 @@ function CreatePage1() {
     const handleNextStep = () => {
         navigate('/create/2');
     };
+
+    const handleCancel = () => {
+        navigate('/main/dashboard');
+    };
     return (
         <div ref={wrapperRef} className={style.wrapper}>
             <div className={style.container}>
@@ -36,13 +40,7 @@ function CreatePage1() {
                                 placeholder="모임 이름을 입력하세요"></input>
                         </form>
                     </div>
-                    {/* <div className={style.formContainer}>
-                        <p className={style.formTitle}>커버 사진</p>
-                        <button className={style.formInput__image}>
-                            <ImageUp />
-                            <p>커버사진을 업로드하세요</p>
-                        </button>
-                    </div> */}
+
                     {/* <div className={style.formContainer}>
                         <p className={style.formTitle}>설명</p>
                         <form method="post">
@@ -69,9 +67,14 @@ function CreatePage1() {
                             <input className={style.formInput}></input>
                         </form>
                     </div> */}
-                    <button className={style.nextButton} onClick={handleNextStep}>
-                        다음 단계
-                    </button>
+                    <div className={style.pagingButtons}>
+                        <button className={style.cancelButton} onClick={handleCancel}>
+                            취소
+                        </button>
+                        <button className={style.nextButton} onClick={handleNextStep}>
+                            다음
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

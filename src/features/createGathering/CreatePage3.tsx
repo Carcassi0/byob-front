@@ -19,6 +19,9 @@ function CreatePage3() {
     const handlePrevStep = () => {
         navigate('/create/2');
     };
+    const handleCancel = () => {
+        navigate('/main/dashboard');
+    };
 
     return (
         <div ref={wrapperRef} className={style.wrapper}>
@@ -38,13 +41,18 @@ function CreatePage3() {
                             <input className={style.formInput} placeholder={'위치를 검색'}></input>
                         </form>
                     </div>
-                    <div className={style.buttonRail}>
-                        <button className={style.nextButton} onClick={handlePrevStep}>
-                            이전 단계
+                    <div className={style.pagingButtons}>
+                        <button className={style.cancelButton} onClick={handleCancel}>
+                            취소
                         </button>
-                        <button className={style.nextButton} onClick={handleNextStep}>
-                            다음 단계
-                        </button>
+                        <div className={style.buttonRail}>
+                            <button className={style.nextButton} onClick={handlePrevStep}>
+                                이전
+                            </button>
+                            <button className={style.nextButton} onClick={handleNextStep}>
+                                다음
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
