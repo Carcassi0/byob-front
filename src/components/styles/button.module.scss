@@ -1,0 +1,19 @@
+.nextButton {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    height: 40px;
+    width: 80px;
+    border-radius: 16px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+        background-color: #c0262d;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+}

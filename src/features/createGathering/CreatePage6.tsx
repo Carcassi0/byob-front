@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ImageUp } from 'lucide-react';
+import buttonStyle from '../../components/styles/button.module.scss';
 
 function CreatePage6() {
     const navigate = useNavigate();
@@ -129,10 +130,10 @@ function CreatePage6() {
                             취소
                         </button>
                         <div className={style.buttonRail}>
-                            <button className={style.nextButton} onClick={handlePrevStep}>
+                            <button className={buttonStyle.nextButton} onClick={handlePrevStep}>
                                 이전
                             </button>
-                            <button className={style.nextButton} onClick={handleNextStep}>
+                            <button className={buttonStyle.nextButton} onClick={handleNextStep}>
                                 다음
                             </button>
                         </div>

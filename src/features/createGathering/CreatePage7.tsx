@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
 import { useEffect, useRef } from 'react';
+import buttonStyle from '../../components/styles/button.module.scss';
 
 function CreatePage7() {
     const navigate = useNavigate();
@@ -38,9 +39,13 @@ function CreatePage7() {
 
                     <div className={style.searchLocation}>
                         <form method="post">
-                            <textarea
-                                className={style.formInput__detail}
-                                placeholder={'모임을 설명해주세요'}
+                            <input
+                                type="number"
+                                placeholder="30,000"
+                                max={1000000}
+                                min={30000}
+                                step={10000}
+                                className={style.formInput__deposit}
                             />
                         </form>
                     </div>
@@ -50,10 +55,10 @@ function CreatePage7() {
                             취소
                         </button>
                         <div className={style.buttonRail}>
-                            <button className={style.nextButton} onClick={handlePrevStep}>
+                            <button className={buttonStyle.nextButton} onClick={handlePrevStep}>
                                 이전
                             </button>
-                            <button className={style.nextButton} onClick={handleNextStep}>
+                            <button className={buttonStyle.nextButton} onClick={handleNextStep}>
                                 만들기
                             </button>
                         </div>

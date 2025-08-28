@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
+import buttonStyle from '../../components/styles/button.module.scss';
 import { useEffect, useRef } from 'react';
 
 function CreatePage1() {
@@ -29,7 +30,6 @@ function CreatePage1() {
                     <div className={style.progressContainer}>
                         <div className={style.progressText}>
                             <p>Step 1 of 7</p>
-                            <p>기본 정보</p>
                         </div>
                         <div className={style.progressBar__step1}></div>
                     </div>
@@ -71,7 +71,7 @@ function CreatePage1() {
                         <button className={style.cancelButton} onClick={handleCancel}>
                             취소
                         </button>
-                        <button className={style.nextButton} onClick={handleNextStep}>
+                        <button className={buttonStyle.nextButton} onClick={handleNextStep}>
                             다음
                         </button>
                     </div>

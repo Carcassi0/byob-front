@@ -15,7 +15,9 @@ function Dashboard() {
             <div className={style.dashboardContainer}>
                 <div className={style.alertContainer}></div>
                 <div className={style.actionContainer}>
-                    <button onClick={navigateToCreatePage}>와인회 만들기</button>
+                    <button onClick={navigateToCreatePage} className={style.buildButton}>
+                        와인회 만들기
+                    </button>
                 </div>
             </div>
             <h3 className={style.subTitle}>다가오는 와인회</h3>

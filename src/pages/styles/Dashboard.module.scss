@@ -23,3 +23,26 @@
 .divider {
     border: 1px solid rgb(217, 217, 217);
 }
+
+.buildButton {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    color: #111;
+    background-color: white;
+    border: 2px solid #c0262d;
+
+    &:hover {
+        background-color: #ffe0e2;
+        transform: translateY(-1px);
+    }
+}

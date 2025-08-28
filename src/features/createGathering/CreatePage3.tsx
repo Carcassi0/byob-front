@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
 import { useEffect, useRef } from 'react';
+import buttonStyle from '../../components/styles/button.module.scss';
 
 function CreatePage3() {
     const navigate = useNavigate();
@@ -31,7 +32,6 @@ function CreatePage3() {
                     <div className={style.progressContainer}>
                         <div className={style.progressText}>
                             <p>Step 3 of 7</p>
-                            <p>기본 정보</p>
                         </div>
                         <div className={style.progressBar__step3}></div>
                     </div>
@@ -46,10 +46,10 @@ function CreatePage3() {
                             취소
                         </button>
                         <div className={style.buttonRail}>
-                            <button className={style.nextButton} onClick={handlePrevStep}>
+                            <button className={buttonStyle.nextButton} onClick={handlePrevStep}>
                                 이전
                             </button>
-                            <button className={style.nextButton} onClick={handleNextStep}>
+                            <button className={buttonStyle.nextButton} onClick={handleNextStep}>
                                 다음
                             </button>
                         </div>
