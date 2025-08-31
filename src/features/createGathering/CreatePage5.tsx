@@ -1,11 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import buttonStyle from '../../components/styles/button.module.scss';
+import useGateringStore from '../../store/gatheringStore';
 
 function CreatePage5() {
     const navigate = useNavigate();
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [inputValue, setInputValue] = useState('');
+    const { setDescription } = useGateringStore();
 
     useEffect(() => {
         const el = wrapperRef.current;
@@ -15,6 +18,7 @@ function CreatePage5() {
     }, []);
 
     const handleNextStep = () => {
+        setDescription(inputValue);
         navigate('/create/6');
     };
     const handlePrevStep = () => {
@@ -36,10 +40,12 @@ function CreatePage5() {
                     </div>
 
                     <div className={style.searchLocation}>
-                        <form method="post">
+                        <form>
                             <textarea
                                 className={style.formInput__detail}
                                 placeholder={'모임을 설명해주세요'}
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
                             />
                         </form>
                     </div>

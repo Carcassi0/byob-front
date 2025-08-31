@@ -1,21 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
 import buttonStyle from '../../components/styles/button.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import useGateringStore from '../../store/gatheringStore';
 
 function CreatePage1() {
     const navigate = useNavigate();
+    const [inputValue, setInputValue] = useState('');
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const { setName } = useGateringStore();
 
     useEffect(() => {
         const el = wrapperRef.current;
         if (el) {
-            // 다음 tick에 fadein 클래스 추가
             setTimeout(() => el.classList.add(style.fadein), 10);
         }
     }, []);
 
     const handleNextStep = () => {
+        setName(inputValue);
         navigate('/create/2');
     };
 
@@ -34,39 +37,15 @@ function CreatePage1() {
                         <div className={style.progressBar__step1}></div>
                     </div>
                     <div className={style.formContainer}>
-                        <form method="post">
+                        <form>
                             <input
                                 className={style.formInput}
-                                placeholder="모임 이름을 입력하세요"></input>
+                                placeholder="모임 이름을 입력하세요"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                            />
                         </form>
                     </div>
-
-                    {/* <div className={style.formContainer}>
-                        <p className={style.formTitle}>설명</p>
-                        <form method="post">
-                            <input className={style.formInput}></input>
-                        </form>
-                    </div>
-                    <div className={style.formContainer__row}>
-                        <div className={style.formContainer}>
-                            <p className={style.formTitle}>시간</p>
-                            <form method="post">
-                                <input type="date" className={style.formInput}></input>
-                            </form>
-                        </div>
-                        <div className={style.formContainer}>
-                            <p className={style.formTitle}>설명</p>
-                            <form method="post">
-                                <input className={style.formInput}></input>
-                            </form>
-                        </div>
-                    </div>
-                    <div className={style.searchLocation}>
-                        <p className={style.formTitle}>위치</p>
-                        <form method="get">
-                            <input className={style.formInput}></input>
-                        </form>
-                    </div> */}
                     <div className={style.pagingButtons}>
                         <button className={style.cancelButton} onClick={handleCancel}>
                             취소

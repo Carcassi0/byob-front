@@ -1,11 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import buttonStyle from '../../components/styles/button.module.scss';
+import useGateringStore from '../../store/gatheringStore';
 
 function CreatePage4() {
     const navigate = useNavigate();
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [inputValue, setInputValue] = useState('');
+    const { setDate } = useGateringStore();
 
     useEffect(() => {
         const el = wrapperRef.current;
@@ -15,6 +18,7 @@ function CreatePage4() {
     }, []);
 
     const handleNextStep = () => {
+        setDate(inputValue);
         navigate('/create/5');
     };
     const handlePrevStep = () => {
@@ -36,8 +40,13 @@ function CreatePage4() {
                     </div>
 
                     <div className={style.searchLocation}>
-                        <form method="post">
-                            <input type="date" className={style.formInput__date}></input>
+                        <form>
+                            <input
+                                type="date"
+                                className={style.formInput__date}
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                            />
                         </form>
                     </div>
                     <div className={style.pagingButtons}>

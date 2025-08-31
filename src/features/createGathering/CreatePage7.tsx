@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import buttonStyle from '../../components/styles/button.module.scss';
 
 function CreatePage7() {
     const navigate = useNavigate();
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [isAgreed, setIsAgreed] = useState(false);
+    const [depositValue, setDepositValue] = useState(30000);
 
     useEffect(() => {
         const el = wrapperRef.current;
@@ -14,8 +16,16 @@ function CreatePage7() {
         }
     }, []);
 
+    const toggleAgree = () => {
+        if (isAgreed) {
+            setIsAgreed(false);
+        } else setIsAgreed(true);
+    };
+
     const handleNextStep = () => {
-        navigate('/create/pending');
+        if (isAgreed && depositValue > 30000) {
+            navigate('/create/pending');
+        } else return;
     };
     const handlePrevStep = () => {
         navigate('/create/6');
@@ -32,7 +42,6 @@ function CreatePage7() {
                     <div className={style.progressContainer}>
                         <div className={style.progressText}>
                             <p>Step 7 of 7</p>
-                            <p>기본 정보</p>
                         </div>
                         <div className={style.progressBar__step7}></div>
                     </div>
@@ -45,9 +54,20 @@ function CreatePage7() {
                                 max={1000000}
                                 min={30000}
                                 step={10000}
+                                value={depositValue}
+                                onChange={(e) => setDepositValue(Number(e.target.value))}
                                 className={style.formInput__deposit}
                             />
                         </form>
+                    </div>
+                    <div className={style.termContainer}>
+                        <p className={style.termContainer__text}>이용약관에 동의</p>
+                        <button
+                            className={`${style.termContainer__button} ${
+                                isAgreed ? style.isActive : ''
+                            }`}
+                            onClick={toggleAgree}
+                        />
                     </div>
 
                     <div className={style.pagingButtons}>

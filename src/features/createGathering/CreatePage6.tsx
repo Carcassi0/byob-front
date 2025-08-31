@@ -3,6 +3,7 @@ import style from './CreatePage.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ImageUp } from 'lucide-react';
 import buttonStyle from '../../components/styles/button.module.scss';
+import useGateringStore from '../../store/gatheringStore';
 
 function CreatePage6() {
     const navigate = useNavigate();
@@ -13,6 +14,8 @@ function CreatePage6() {
     // const [isUploadSuccessed, setIsUploadSuccessed] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [inputValue, setInputValue] = useState<File | undefined>(undefined);
+    const { setCoverImage } = useGateringStore();
 
     useEffect(() => {
         const el = wrapperRef.current;
@@ -23,10 +26,10 @@ function CreatePage6() {
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedImage = event.target.files?.[0];
+        setInputValue(selectedImage);
         validateAndSetFile(selectedImage);
     };
 
-    // 드래그앤드랍
     const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         setIsDragging(true);
@@ -78,6 +81,7 @@ function CreatePage6() {
     };
 
     const handleNextStep = () => {
+        if (inputValue) setCoverImage(inputValue);
         navigate('/create/7');
     };
     const handlePrevStep = () => {
@@ -94,7 +98,6 @@ function CreatePage6() {
                     <div className={style.progressContainer}>
                         <div className={style.progressText}>
                             <p>Step 6 of 7</p>
-                            <p>기본 정보</p>
                         </div>
                         <div className={style.progressBar__step6}></div>
                     </div>

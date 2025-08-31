@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import buttonStyle from '../../components/styles/button.module.scss';
+import useGateringStore from '../../store/gatheringStore';
 
 interface attendButton {
     label: string;
@@ -9,6 +10,8 @@ interface attendButton {
 }
 function CreatePage2() {
     const navigate = useNavigate();
+    const [inputValue, setInputValue] = useState(0);
+    const { setSize } = useGateringStore();
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -31,6 +34,7 @@ function CreatePage2() {
     };
 
     const handleNextStep = () => {
+        setSize(inputValue);
         navigate('/create/3');
     };
     const handlePrevStep = () => {
@@ -51,45 +55,23 @@ function CreatePage2() {
 
                     <div className={style.formButtonRail}>
                         {buttonList.map((item) => (
-                            <form method="post">
-                                <input
+                            <form>
+                                <button
+                                    type="button"
                                     className={style.formButton}
                                     value={item.label}
-                                    type="submit"
-                                />
+                                    onClick={() => setInputValue(item.data)}>
+                                    {item.label}
+                                </button>
                             </form>
                         ))}
-                        <form method="post">
-                            <input className={style.formButton} value={'커스텀'} type="submit" />
+                        <form>
+                            <button type="button" className={style.formButton}>
+                                커스텀
+                            </button>
                         </form>
                     </div>
 
-                    {/* <div className={style.formContainer}>
-                        <p className={style.formTitle}>설명</p>
-                        <form method="post">
-                            <input className={style.formInput}></input>
-                        </form>
-                    </div>
-                    <div className={style.formContainer__row}>
-                        <div className={style.formContainer}>
-                            <p className={style.formTitle}>시간</p>
-                            <form method="post">
-                                <input type="date" className={style.formInput}></input>
-                            </form>
-                        </div>
-                        <div className={style.formContainer}>
-                            <p className={style.formTitle}>설명</p>
-                            <form method="post">
-                                <input className={style.formInput}></input>
-                            </form>
-                        </div>
-                    </div>
-                    <div className={style.searchLocation}>
-                        <p className={style.formTitle}>위치</p>
-                        <form method="get">
-                            <input className={style.formInput}></input>
-                        </form>
-                    </div> */}
                     <div className={style.pagingButtons}>
                         <button className={style.cancelButton} onClick={handleCancel}>
                             취소

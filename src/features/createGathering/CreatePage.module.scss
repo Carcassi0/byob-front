@@ -132,6 +132,7 @@
     width: 60px;
     border-radius: 16px;
     border: none;
+    color: black;
     background-color: white;
     cursor: pointer;
     &:hover {
@@ -140,8 +141,9 @@
         background-color: #c0262d;
     }
     &:focus {
-        border: 1px solid;
-        border-color: #ea2a33;
+        transition: all 0.9s ease;
+        color: white;
+        background-color: #c0262d;
     }
 }
 
@@ -271,4 +273,69 @@
 
 .hiddenInput {
     display: none;
+}
+
+.termContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    background-color: #eee;
+    border-radius: 8px;
+    align-items: center; // 텍스트/버튼 수직 중앙 정렬
+
+    &__text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #4b5563; // 주변 톤과 어울리는 진회색
+        letter-spacing: -0.01em;
+        user-select: none;
+    }
+
+    &__button {
+        position: relative;
+        width: 48px;
+        height: 30px;
+        border-radius: 9999px;
+        border: none;
+        background-color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        outline: none;
+
+        // 토글 핸들
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: #ea2a33;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        // 활성 상태 (접근성 속성 또는 클래스 기반)
+        &[aria-pressed='true'],
+        &.isActive {
+            background-color: #ea2a33;
+            border-color: #ea2a33;
+
+            &::after {
+                transform: translateX(20px);
+                background-color: #ffffff;
+            }
+        }
+
+        &:hover {
+            border-color: #c0262d;
+        }
+
+        &:focus-visible {
+            outline: 2px solid #c0262d;
+            outline-offset: 2px;
+        }
+    }
 }

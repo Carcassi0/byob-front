@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import style from './CreatePage.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import buttonStyle from '../../components/styles/button.module.scss';
+import useGateringStore from '../../store/gatheringStore';
 
 function CreatePage3() {
     const navigate = useNavigate();
+    const [inputValue, setInputValue] = useState('');
+    const { setLocation } = useGateringStore();
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -15,6 +18,7 @@ function CreatePage3() {
     }, []);
 
     const handleNextStep = () => {
+        setLocation(inputValue);
         navigate('/create/4');
     };
     const handlePrevStep = () => {
@@ -37,8 +41,13 @@ function CreatePage3() {
                     </div>
 
                     <div className={style.searchLocation}>
-                        <form method="get">
-                            <input className={style.formInput} placeholder={'위치를 검색'}></input>
+                        <form>
+                            <input
+                                className={style.formInput}
+                                placeholder={'위치를 검색'}
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                            />
                         </form>
                     </div>
                     <div className={style.pagingButtons}>
