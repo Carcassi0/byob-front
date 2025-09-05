@@ -1,7 +1,6 @@
 import { User, LayoutDashboard, Search, ScrollText, Wine } from 'lucide-react';
 import style from './SideBar.module.scss';
 import { Link } from 'react-router-dom';
-import avatarImg from '../../assets/avatar.png';
 
 function SideBar() {
     // const location = useLocation();
@@ -50,30 +49,18 @@ function SideBar() {
     ] as const;
 
     return (
-        <aside className={style.wrapper}>
-            <div className={style.container}>
-                <div className={style.profileContainer}>
-                    <div
-                        className={style.avatar}
-                        style={{
-                            backgroundImage: `url(${avatarImg})`,
-                        }}></div>
-                    <div className={style.profileContainer__testSection}>
-                        <h1 className={style.name}>위의종</h1>
-                    </div>
-                </div>
-                <nav className={style.menuRail}>
-                    {userMenuItems.map((item) => (
-                        <a key={item.id} className={style.menuItem}>
-                            <Link to={item.path} className={style.menuItem__link}>
-                                <item.icon size={24} className={style.menuItem__icon} />
-                                <span className={style.menuItem__text}>{item.id}</span>
-                            </Link>
-                        </a>
-                    ))}
-                </nav>
-            </div>
-        </aside>
+        <div className={style.container}>
+            <nav className={style.menuRail}>
+                {userMenuItems.map((item) => (
+                    <a key={item.id} className={style.menuItem}>
+                        <Link to={item.path} className={style.menuItem__link}>
+                            <item.icon size={24} className={style.menuItem__icon} />
+                            <span className={style.menuItem__text}>{item.id}</span>
+                        </Link>
+                    </a>
+                ))}
+            </nav>
+        </div>
     );
 }
 

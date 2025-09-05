@@ -1,5 +1,6 @@
 .page {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     background-color: #fcf8f8;
     max-width: 1450px;
